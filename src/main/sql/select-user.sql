@@ -1,18 +1,20 @@
--- INSERT INTO users(username필드, password필드) VALUES (username값, password값)
+-- SELECT * FROM users WHERE username필드=값 AND password필드=값
 
 
 /*
- * 직접 유저 데이터를 등록하는 예 )
+ * 직접 유저 데이터를 아이디,비번 으로 조회하는 예 )
  * 
- *  INSERT INTO users(username, password) VALUES (parksungwoo, 1234)
+ * 	SELECT * FROM users WHERE username=parksungwoo AND password=1234
  * 
  * 
- * 자바 JDBC로 유저 데이터를 등록하는 예 ) - RegisterServlet.java
+ * 자바 JDBC로 유저 데이터를 아이디,비번 으로 조회하는 예 ) - LoginServlet.java
  * 
- *  INSERT INTO users(username, password) VALUES (?, ?)
+ *  SELECT * FROM users WHERE username=? AND password=?
  * 
- * 	뒤에 (username값, password값)이 들어가는 부분을
- * 	(?, ?) 이렇게 '?' 물음표로 채워넣으며 바꾼다
+ * 	뒤에
+ * 	username필드=값 AND password필드=값
+ * 	에서 값이 들어가는 부분을
+ * 	username=? AND password=? 이렇게 '?' 물음표로 채워넣으며 바꾼다
  * 
  * 	자바 코드에서
  * 	ps.setString(1, "parksungwoo");
@@ -24,4 +26,4 @@
  * 
  */
 
-INSERT INTO users(username, password) VALUES (?, ?)
+SELECT * FROM users WHERE username=? AND password=?
